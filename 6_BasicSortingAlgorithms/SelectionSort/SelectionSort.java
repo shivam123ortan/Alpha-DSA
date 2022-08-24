@@ -1,8 +1,6 @@
-import javax.swing.plaf.synth.SynthStyleFactory;
-
 public class SelectionSort {
 
-    public static void selectionSort(int [] arr){
+    public static void selectionSort(int [] arr){  // O(n)
         int n = arr.length;
         for(int i=0; i<n-1; i++){
             int minPos = i;

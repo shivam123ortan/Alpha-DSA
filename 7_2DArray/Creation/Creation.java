@@ -7,7 +7,7 @@ public class Creation {
             for(int j=0; j<m; j++){
                 mif (matrix[i][j] == key){
                     System.out.println("Found at " + i + j);
-                    return true
+                    return true;
                 }
             }
         }

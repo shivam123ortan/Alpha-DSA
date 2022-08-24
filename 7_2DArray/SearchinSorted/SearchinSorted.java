@@ -1,5 +1,7 @@
 //Search for a key in sorted row wise and column wise.
 //Staircase Search
+// O(n+m)
+
 public class SearchinSorted {
 
     public static boolean stairCaseSearch(int matrix[][], int key){

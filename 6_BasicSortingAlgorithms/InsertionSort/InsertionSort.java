@@ -1,6 +1,6 @@
 public class InsertionSort {
 
-    public static void insertionSort(int arr[]){
+    public static void insertionSort(int arr[]){ // O(n2)
         int n = arr.length;
         for(int i=0; i<n-1; i++){
             int curr = arr[i];
