@@ -1,0 +1,18 @@
+Encapsulation: 
+    Wrapping up of data & methods under a single unit.
+
+Constructor: 
+    *Special method invoked automatically.
+    *Same name as class.
+    *Don't have return type.
+    *Only called once, at object creation.
+    *Memory allocation happens when constructor is called.
+
+    It has three types-->
+        1. Parameterised
+        2. Non-Parameterised
+        3. Copy Constructor
+
+    Constructor overloading--> 
+        Same name of constructor with different parameters.
+
