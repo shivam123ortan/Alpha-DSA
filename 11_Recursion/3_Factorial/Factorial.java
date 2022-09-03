@@ -1,6 +1,6 @@
 public class Factorial {
 
-    public static int fact(int n){
+    public static int fact(int n){ // TC - O(n), SC - O(n) 
         if(n == 0){
             return 1;
         }
