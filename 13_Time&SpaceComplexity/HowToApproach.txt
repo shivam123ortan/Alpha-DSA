@@ -1,0 +1,3 @@
+How to approach questions?
+1. Brute Force
+2. Optimize--Optimize--and so on.
