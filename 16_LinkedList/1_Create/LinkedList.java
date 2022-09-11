@@ -248,42 +248,103 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
+    // FLOYD'S CYCLE FINDING ALGORITHM
+    // DETECTING CYCLE IN LL
+    public static boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+         
+        while(fast != null && fast.next != null){
+            slow = slow.next; // +1
+            fast = fast.next.next; // +2
+            if(slow == fast){
+                return true; // cycle exists
+            }
+        }
+        return false; // cycle doesn't exists
+    }
+
+    // REMOVE A LOOP CYCLE IN A LL
+    public static void removeCycle(){
+        // detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle == false){
+            return;
+        }
+
+        // find meeting point 
+        slow = head;
+        Node prev = null; // last node
+        while(slow != fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle -> last.next = null
+        prev.next = null;
+    }
     
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(3);
-        ll.addLast(4);
+        // ll.addFirst(2);
+        // ll.addFirst(1);
+        // ll.addLast(3);
+        // ll.addLast(4);
 
-        ll.add(2, 9);
-        ll.print();
+        // ll.add(2, 9);
+        // ll.print();
 
         
-        ll.removeFirst();
-        ll.print();
+        // ll.removeFirst();
+        // ll.print();
         
-        ll.removeLast();
-        ll.print();
-        System.out.println(ll.size);
+        // ll.removeLast();
+        // ll.print();
+        // System.out.println(ll.size);
 
-        System.out.println(ll.itrSearch(3));
-        System.out.println(ll.itrSearch(19));
+        // System.out.println(ll.itrSearch(3));
+        // System.out.println(ll.itrSearch(19));
 
-        System.out.println(ll.recursiveSearch(3));
-        System.out.println(ll.recursiveSearch(19));
+        // System.out.println(ll.recursiveSearch(3));
+        // System.out.println(ll.recursiveSearch(19));
 
-        ll.reverse();
-        ll.print();
+        // ll.reverse();
+        // ll.print();
 
-        ll.deleteNthfromEnd(2);
-        ll.print();
+        // ll.deleteNthfromEnd(2);
+        // ll.print();
 
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.addLast(6);
-        ll.print();
+        // ll.addLast(2);
+        // ll.addLast(3);
+        // ll.addLast(6);
+        // ll.print();
 
-        System.out.println(ll.checkPalindrome());
+        // System.out.println(ll.checkPalindrome());
+
+        //-------------------------------------------------------------
+
+        // FLOYD'S CYCLE FINDING
+        head = new Node(1);
+        Node temp = new Node(2);
+        head.next = temp;
+        head.next.next = new Node(3);
+        head.next.next.next = temp;
+        // 1->2->3->2
+        System.out.println(isCycle());
+        // Removing cycle
+        removeCycle();
+        System.out.println(isCycle());
     }
 }
