@@ -295,9 +295,71 @@ public class LinkedList {
         // remove cycle -> last.next = null
         prev.next = null;
     }
+
+    // MERGE SORT
+    private Node getMid(Node head){
+        Node slow = head;
+        Node fast = head.next;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow; // mid
+    }
+
+    private Node merge(Node head1, Node head2){
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+        
+        while(head1 != null && head2 != null){
+            if(head1.data <= head2.data){
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+            } else {
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }
+        }
+
+        while(head1 != null){
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+
+        while(head2 != null){
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+
+        return mergedLL.next;
+    }
+    
+    public Node mergeSort(Node head){
+        // BaseCase
+        if(head == null || head.next == null){
+            return head;
+        }
+        
+        // Find mid
+        Node mid = getMid(head);
+
+        // left & right MS
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rightHead);
+        
+        // merge
+        return merge(newLeft, newRight);
+    }
     
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        // LinkedList ll = new LinkedList();
         // ll.addFirst(2);
         // ll.addFirst(1);
         // ll.addLast(3);
@@ -335,16 +397,29 @@ public class LinkedList {
 
         //-------------------------------------------------------------
 
-        // FLOYD'S CYCLE FINDING
-        head = new Node(1);
-        Node temp = new Node(2);
-        head.next = temp;
-        head.next.next = new Node(3);
-        head.next.next.next = temp;
-        // 1->2->3->2
-        System.out.println(isCycle());
-        // Removing cycle
-        removeCycle();
-        System.out.println(isCycle());
+        // // FLOYD'S CYCLE FINDING
+        // head = new Node(1);
+        // Node temp = new Node(2);
+        // head.next = temp;
+        // head.next.next = new Node(3);
+        // head.next.next.next = temp;
+        // // 1->2->3->2
+        // System.out.println(isCycle());
+        // // Removing cycle
+        // removeCycle();
+        // System.out.println(isCycle());
+
+        //-------------------------------------------------------------
+        LinkedList ll = new LinkedList();
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
+        ll.addFirst(4);
+        ll.print();
+
+        ll.head = ll.mergeSort(head);
+        ll.print();
+
+
     }
 }
