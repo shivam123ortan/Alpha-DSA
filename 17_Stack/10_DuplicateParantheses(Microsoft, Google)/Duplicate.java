@@ -31,7 +31,7 @@ import java.util.*;
 
 public class Duplicate {
 
-    public static boolean isDuplicate(String str){
+    public static boolean isDuplicate(String str){ // O(n)
         Stack<Character> s = new Stack<>();
 
         for(int i=0; i<str.length(); i++){
