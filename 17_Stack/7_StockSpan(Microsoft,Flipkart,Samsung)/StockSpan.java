@@ -6,6 +6,7 @@ public class StockSpan {
 
     public static void stockSpan(int stocks[], int span[]){
         Stack<Integer> s = new Stack<>();
+        // Pehla element toh day one h isliye span[0] = 1
         span[0] = 1;
         s.push(0);
 
