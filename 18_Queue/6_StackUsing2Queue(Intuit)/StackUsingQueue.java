@@ -12,7 +12,7 @@ public class StackUsingQueue {
             return q1.isEmpty() && q2.isEmpty();
         }
 
-        // ADD
+        // ADD - O(1)
         public static void push(int data){
             if(!q1.isEmpty()){
                 q1.add(data);
@@ -21,7 +21,7 @@ public class StackUsingQueue {
             }
         }
 
-        // POP
+        // POP 
         public static int pop(){
             if(isEmpty()){
                 System.out.println("empty stack");
