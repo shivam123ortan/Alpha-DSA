@@ -2,15 +2,16 @@ import java.util.Scanner;
 
 public class Creation {
 
-    public static boolean search(int matrix[][], key){
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                mif (matrix[i][j] == key){
+    public static boolean search(int matrix[][],int key){
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(matrix[i][j] == key){
                     System.out.println("Found at " + i + j);
                     return true;
                 }
             }
         }
+        return false;
     }
     
     public static void main(String[] args) {
