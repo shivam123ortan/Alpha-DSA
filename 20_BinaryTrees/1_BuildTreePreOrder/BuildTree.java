@@ -13,7 +13,7 @@ public class BuildTree {
             this.right = null;
         }
     }
-
+    @SuppressWarnings("unchecked")
     static class BinaryTree {
         static int idx = -1;
         public static Node buildTree(int nodes[]){ // TC - O(n)
@@ -96,6 +96,7 @@ public class BuildTree {
     public static void main(String[] args) {
 
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
