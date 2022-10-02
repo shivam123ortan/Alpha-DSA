@@ -29,7 +29,7 @@ public class BuildTree {
             return newNode;
         }
 
-        // PREORDER TRAVERSAL - left->right->root
+        // PREORDER TRAVERSAL - root->left->right
         public static void preorder(Node root){ // TC - O(n)
             if(root == null){
                 // System.out.print(-1 + " ");
@@ -101,10 +101,10 @@ public class BuildTree {
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
 
-        // tree.preorder(root);
+        tree.preorder(root);
         // tree.inorder(root);
         // tree.postorder(root);
-        tree.levelOrder(root);
+        // tree.levelOrder(root);
 
     }    
 }
