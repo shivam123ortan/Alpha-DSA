@@ -47,7 +47,7 @@ public class DFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]){
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]){ // TC -> O(V+E)
         //visit 
         System.out.print(curr + " ");
         vis[curr] = true;
