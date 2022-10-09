@@ -7,10 +7,10 @@ public class SearchInTrie {
         boolean eow = false;
 
         Node(){
-            // for(int i=0; i<26; i++){
-            //     children[i] = null;
-            // }
-            Arrays.fill(children, null);
+            for(int i=0; i<26; i++){
+                children[i] = null;
+            }
+            // Arrays.fill(children, null);
         }
     }
     public static Node root = new Node();

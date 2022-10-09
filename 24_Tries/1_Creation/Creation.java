@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Creation {
 
     static class Node{
-        Node children[] new Node[26];
+        Node children[] = new Node[26];
         boolean eow = false;
 
         Node(){
@@ -13,6 +13,7 @@ public class Creation {
             // Arrays.fill(children, null);
         }
     }
+    public static Node root = new Node();
     
     public static void main(String[] args) {
         String words[] = {"the", "a", "there", "their", "any", "thee"};
