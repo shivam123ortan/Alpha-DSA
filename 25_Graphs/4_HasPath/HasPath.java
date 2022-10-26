@@ -4,8 +4,6 @@
 
 import java.util.*;
 
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
-
 public class HasPath {
 
     static class Edge {

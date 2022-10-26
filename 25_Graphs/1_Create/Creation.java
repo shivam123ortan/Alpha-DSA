@@ -18,6 +18,7 @@ public class Creation {
         
         int V = 5; // vertices
 
+        @SuppressWarnings ("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[V]; // Array of type ArrayList of type Edge
 
         for(int i=0; i<V; i++){

@@ -8,11 +8,12 @@
     *remove(key)
  */
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapTut {
     public static void main(String[] args) {
         // Create
-        HashMap<String, Integer> hm = new HashMap<>();
+        Map<String, Integer> hm = new HashMap<>();
 
         // Insert - O(1)
         hm.put("India", 100);
