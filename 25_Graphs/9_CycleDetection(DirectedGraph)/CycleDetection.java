@@ -1,3 +1,9 @@
+/*
+    In directed graphs if we use the approach of Undirected DFS approach then
+    it will be failed.
+    Therefore we use some modified code.
+ */
+
 import java.util.*;
 
 
@@ -47,7 +53,7 @@ public class CycleDetection {
 
         for(int i=0; i<graph[curr].size(); i++){
             Edge e = graph[curr].get(i);
-            if(stack[e.dest]){
+            if(stack[e.dest]){ // Cycle condition
                 return true;
             }
             if(!vis[e.dest] && isCycleUtil(graph, e.dest, vis, stack)){
