@@ -78,7 +78,7 @@ public class LCS {
         String str2 = "abedg";
         int n = str1.length();
         int m = str2.length();
-        int dp[][] = new int[n+1][m+1];
+        // int dp[][] = new int[n+1][m+1];
 
         // initialization
         // for(int i=0; i<n+1; i++){

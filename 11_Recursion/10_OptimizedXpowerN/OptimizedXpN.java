@@ -8,7 +8,7 @@ public class OptimizedXpN {
         int halfPow = optimizedPower(x, n/2);
         int halfPowsSq = halfPow * halfPow;
         
-        if((n&1)==1){
+        if((n&1)==1){ // odd
             halfPowsSq = x * halfPowsSq;
         }
         return halfPowsSq;
