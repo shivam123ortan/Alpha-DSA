@@ -42,6 +42,7 @@ public class NQueens { // O(n!)
         }
     }
     
+    // To check how many total combinations are there
     public static boolean NQueensExist(char board[][], int row){
         // Base Case
         if(row == board.length){

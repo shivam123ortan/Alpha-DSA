@@ -1,3 +1,6 @@
+// Find number of ways to reach from (0,0) to (N-1, M-1) in a NxM Grid.
+// Allowed moves - right or down.
+
 public class GridWays { //O(2^(n+m))
 
     public static int gridWays(int i, int j, int m, int n){
@@ -20,12 +23,13 @@ public class GridWays { //O(2^(n+m))
         return fn;
     }
     
+    // optimized way by using permutation formula (RRDD, RDRD, RDDR...)
     public static int optimizedGridWays(int m, int n){
-        return (fact(n-1+m-1))/(fact(n-1)*fact(m-1));
+        return (fact(n-1+m-1))/(fact(n-1)*fact(m-1)); 
     }
     
     public static void main(String[] args) {
-        System.out.println(gridWays(0, 0, 3, 3));
-        System.out.println(optimizedGridWays(3, 3));
+        // System.out.println(gridWays(0, 0, 3, 3));
+        System.out.println(optimizedGridWays(10, 10));
     }    
 }

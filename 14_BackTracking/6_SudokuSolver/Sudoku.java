@@ -38,7 +38,8 @@ public class Sudoku {
         }
 
         //Recursion
-        int nextRow = row, nextCol = col+1;
+        int nextRow = row;
+        int nextCol = col+1;
         if(col+1 == 9){
             nextRow = row+1;
             nextCol = 0;

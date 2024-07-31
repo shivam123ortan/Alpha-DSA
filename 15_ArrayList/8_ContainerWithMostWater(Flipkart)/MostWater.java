@@ -1,6 +1,6 @@
 /*
  * For given n lines on x-axis, use 2 linew to form a container 
- * such tant it holds maximum water.
+ * such that it holds maximum water.
  * height = [1,8,6,2,5,4,8,3,7]
  */
 

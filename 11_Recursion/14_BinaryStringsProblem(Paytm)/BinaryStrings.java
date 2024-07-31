@@ -19,7 +19,7 @@ public class BinaryStrings {
         //     printBinaryStrings(n-1, 0, str + ("0"));
         // }
 
-        printBinaryStrings(n-1, 0, str + ("0"));
+        printBinaryStrings(n-1, 0, str + "0");
         if(lastPlace == 0){
             printBinaryStrings(n-1, 1, str + ("1"));
         }

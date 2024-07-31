@@ -24,7 +24,7 @@ public class LinkedList {
         if(head == null){
             head = tail = newNode;
             return;
-        }
+        } 
 
         // Step 2 -- newNode next = head
         newNode.next = head; // Link

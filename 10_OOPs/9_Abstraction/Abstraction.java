@@ -4,6 +4,7 @@
 // > Cannot create an instance of abstract class.
 // > Can have abstract/non-abstract methods.
 // > Can have constructors.
+// > A subclass must override all abstract methods of an abstract class
 
 
 abstract class Animal{
